@@ -13,7 +13,7 @@ Using **SQL, Power BI, and Python,** I built a complete credit risk analysis wor
 - Created a **Power BI dashboard** for portfolio-level risk analysis
 
 ## 2. Business Problem
-Lenders need to answer questions like:
+**Lenders need to answer questions like:**
 - Which borrowers are most likely to default?
 - Which segments cause the biggest financial losses?
 - How can risk be identified early and explained clearly?
