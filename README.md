@@ -2,7 +2,9 @@
 
 ## 1. Project Summary  
 This project presents an end-to-end **credit risk analytics and default prediction solution** built on a large-scale historical loan dataset containing **2,260,668 records.**  
+
 The goal was to identify the key drivers of loan defaults, quantify portfolio risk using **default exposure** (not just default rates), and build an **explainable predictive model** using only approval-time information.  
+
 The project mirrors real-world credit risk workflows by combining **SQL-based analysis**, an **interactive Power BI dashboard**, and an **interpretable logistic regression model.**
 
 ### Key Outcomes
