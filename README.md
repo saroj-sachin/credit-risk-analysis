@@ -1,111 +1,91 @@
 # Credit Risk Analysis & Default Prediction
 
 ## 1. Project Summary  
-This project presents an end-to-end **credit risk analytics and default prediction solution** built on a large-scale historical loan dataset containing **2,260,668 records.**  
+This project analyzes **2.26M+ historical loan records** to understand **why borrowers default, which segments are riskiest,** and **where financial losses are concentrated.**
 
-The goal was to identify the key drivers of loan defaults, quantify portfolio risk using **default exposure** (not just default rates), and build an **explainable predictive model** using only approval-time information.  
+Using **SQL, Power BI, and Python,** I built a complete credit risk analysis workflow that includes business-focused insights, an interactive dashboard, and an explainable default prediction model.
 
-The project mirrors real-world credit risk workflows by combining **SQL-based analysis**, an **interactive Power BI dashboard**, and an **interpretable logistic regression model.**
+### Key Results
+- Analyzed 2.25M+ loans using SQL and Python
+- Identified key drivers of loan default and financial risk
+- Showed why default exposure matters more than default rate
+- Built an interpretable model with ~67% recall for defaulters
+- Created a Power BI dashboard for portfolio-level risk analysis
 
-### Key Outcomes
-- Analyzed **2.25M+ loan records** using SQL, Python, and Power BI
-- Identified borrower characteristics most strongly associated with **default risk**
-- Demonstrated why **default exposure** is more informative than default rate alone
-- Built an explainable credit risk model with **~67% recall for defaulters**
-- Delivered a **business-ready dashboard** highlighting risk concentration and exposure
+## 2. Business Problem
+Lenders need to answer questions like:
+- Which borrowers are most likely to default?
+- Which segments cause the biggest financial losses?
+- How can risk be identified early and explained clearly?
 
-## 2. Problem Statement
-Loan default analysis often focuses on overall default rates without answering critical business questions such as:
-- Which borrower characteristics truly drive default risk?
-- Where is the **financial impact** of defaults concentrated?
-- How can risk be identified early using interpretable signals?
-
-This project aims to address these gaps by answering:
-- *Who is likely to default and why?*
-- *Which borrower segments pose the greatest financial risk?*
-- *Can risk be quantified and explained in a way suitable for real lending decisions?*
+This project addresses these questions using real loan data and business-friendly analysis.
 
 ## 3. Dataset Overview
-The dataset consists of **2,260,668 historical loan records,** including borrower demographics, loan attributes, and credit behavior indicators.
-- Source: **Lending Club Loan Data** [(Kaggle)](https://www.kaggle.com/datasets/adarshsng/lending-club-loan-data-csv)
-
-Key characteristics:
-- Binary target variable: `loan_default` (derived from loan status)
-- Highly imbalanced outcome (~13% defaults)
-- Mix of numeric and categorical variables
-- Presence of meaningful missing and “unknown” values
-
-Only approval-time features were used to ensure data integrity and avoid leakage from post-loan information.
+- **Source:** Lending Club Loan Data [(Kaggle)](https://www.kaggle.com/datasets/adarshsng/lending-club-loan-data-csv)
+- **Size:** 2,260,668 loan records
+- **Target:** `loan_default` (derived from loan status)
+- **Integrity:** Used only **approval-time features** (demographics, credit history, loan terms) to prevent data leakage from post-loan information and ensure real-world applicability.
 
 ## 4. Methodology
 ### Data Prepapration
-Raw data was standardized into a clean base dataset (`loan_df_clean`) by:
-- Converting text-based numeric fields (e.g., loan term, interest rate)
-- Preserving business meaning in missing values (e.g., unknown employment length)
-- Creating derived features such as credit history length
+- Cleaned and standardized raw data
+- Converted text fields (term, interest rate) into numeric values
+- Handled missing values while preserving business meaning
+- Created derived features such as credit history length
 
-Separate datasets were maintained for different purposes:
+**Separate datasets were maintained for different purposes:**
 - `loan_df_raw` → Original dataset
 - `loan_df_clean` → Standardized base dataset
 - `loan_df_analytics` → SQL and Power BI analysis
 - `loan_df_model` → Predictive modeling
 
 ### SQL Analysis
-The analytics dataset was loaded into **MySQL** to perform business-driven analysis using:
-- `CASE WHEN` bucketing of continuous variables
-- Conditional aggregation
-- Default rate vs default exposure comparisons
-
-SQL analysis was used to identify default drivers and quantify financial risk across borrower segments.
+Loaded the analytics dataset into **MySQL**
+Used SQL to analyze default patterns by:
+- Interest rate
+- Income and employment length
+- Credit history and utilization
 
 ### Visualization
-A single-page **Credit Risk Dashboard** was built in **Power BI** to provide:
+Built a one-page **Power BI dashboard** showing:
 - Portfolio-level KPIs (default rate, exposure, loan volume)
-- Clear visualization of default drivers (grade, income, employment, credit history, interest rate)
-- Rule-based borrower risk segmentation (Low / Medium / High Risk)
-
-Insight-driven titles and minimal clutter were used to emphasize decision-making.
+- Key default drivers (grade, income, employment, credit history, interest rate)
+- High risk borrower segments
 
 ### Modeling
-An explainable **Logistic Regression** model was developed using:
-- Approval-time features only
-- Stratified train-test split to handle class imbalance
-- Balanced class weights
-- End-to-end preprocessing pipelines (imputation, scaling, encoding)
+- Built an explainable logistic regression model
+- Used approval-time data only
+- Focused on identifying defaulters (recall > accuracy)
+- Interpreted coefficients to explain risk drivers
 
-The modeling approach prioritized **interpretability and recall for defaulters** over raw accuracy.
+Prioritized **Recall** to ensure the majority of defaulters are caught during the application stage.
 
-## 5. Model Summary
-Model: Logistic Regression (binary classification)
-
-Performance:
-- **ROC-AUC ≈ 0.72** (realistic and credible for credit risk)
-- **Recall for defaulters ≈ 67%**
-
-Strongest predictors identified:
-- Credit grade and sub-grade
-- High debt-to-income (DTI) ratios
-- High revolving and bankcard utilization
-- Lower income levels
-- Shorter credit histories
-
-The model’s behavior aligns closely with domain expectations, reinforcing trust and explainability.
-
-## 6. Business Insights and Impact
-### Executive Summary
-- Credit risk is strongly driven by borrower stability and financial stress indicators such as income, DTI, credit history, and utilization.
-- High credit utilization and debt burden act as early warning signals for repayment stress.
-- **High default rate does not always imply highest financial risk**—medium-risk borrowers often contribute the largest share of default exposure due to higher loan volumes.
-- Exposure-based analysis provides a more accurate framework for prioritizing risk management efforts.
-- Rule-based, explainable borrower segmentation supports transparent underwriting and portfolio decisions.
-- The SQL- and BI-driven framework is scalable for large credit portfolios.
-
-## 7. Skills Demonstrated
+## 5. Skills Demonstrated
 - **Data Analysis & Cleaning:** pandas, NumPy
 - **SQL Analytics:** MySQL, conditional aggregation, risk segmentation
 - **Data Visualization:** Power BI, KPI design, business storytelling
 - **Predictive Modeling:** Logistic Regression, scikit-learn
 - **Business Analytics:** Credit risk analysis, exposure modeling, decision support
+
+## 6. Business Insights and Impact
+- Borrowers with high debt and high credit utilization default more often
+- Short or unstable credit history increases risk
+- High default rate ≠ highest financial risk
+- Medium-risk borrowers often cause the largest losses due to higher loan volumes
+- Exposure-based analysis helps prioritize risk management decisions
+
+## 7. Model Interpretation & Performance
+An explainable logistic regression model was built using approval-time features only.
+
+The model achieved a ROC-AUC of ~0.72 and identified approximately 67% of defaulters, prioritizing recall over raw accuracy to align with credit risk objectives.
+
+### Key Interpretations
+- Credit grade and sub-grade emerged as the strongest predictors of default, confirming the expected credit risk hierarchy.
+- Higher debt-to-income ratios and elevated credit utilization significantly increased default likelihood, acting as clear financial stress indicators.
+- Borrowers with lower income and shorter credit histories showed higher default propensity.
+- Model coefficients followed intuitive credit logic, reinforcing trust and explainability.
+
+Overall, the model behavior aligns well with real-world lending practices and provides transparent insights suitable for risk-based decision-making.
 
 ## 8. Next Steps
 - Optimize probability thresholds to balance recall and precision for credit decisioning
