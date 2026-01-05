@@ -44,7 +44,8 @@ Loaded the analytics dataset into **MySQL**
 Used SQL to analyze default patterns by:
 - Interest rate
 - Income and employment length
-- Credit history and utilization   
+- Credit history and utilization  
+
 Compared **default rate vs default exposure** to identify financial risk
 
 ### Visualization
