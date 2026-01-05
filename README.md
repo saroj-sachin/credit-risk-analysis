@@ -1,6 +1,5 @@
 # Credit Risk Analysis & Default Prediction
 
-<img src="Screenshots/dashboard_overview.gif">
 
 ## 1. Project Summary  
 This project analyzes **2.26M+ historical loan records** to understand **why borrowers default, which segments are riskiest,** and **where financial losses are concentrated.**
