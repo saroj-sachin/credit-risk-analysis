@@ -95,3 +95,12 @@ Overall, the model behavior aligns well with **real-world lending practices** an
 - Compare results with tree-based models for rule extraction
 - Perform time-based model validation
 - Extend insights to support risk-based pricing and monitoring alerts
+
+## Repository Guide
+- [data_cleaning](/data_cleaning.ipynb) → Cleaned datasets used for analysis and modeling
+- [sql_analysis](sql_analysis.sql) → SQL queries used for credit risk analysis and segmentation
+- [dashboard](dashboard.pbix) → Power BI dashboard file
+- [modeling](modeling.ipynb) → Jupyter notebook for credit risk modeling
+
+## Final Note
+This project demonstrates my ability to analyze large datasets, extract business-relevant insights, and build explainable models suitable for real-world credit risk decisions.
