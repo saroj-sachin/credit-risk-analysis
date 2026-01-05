@@ -3,7 +3,7 @@
 ## 1. Project Summary  
 This project analyzes **2.26M+ historical loan records** to understand **why borrowers default, which segments are riskiest,** and **where financial losses are concentrated.**
 
-Using **SQL, Power BI, and Python,** I built a complete credit risk analysis workflow that includes business-focused insights, an interactive dashboard, and an explainable default prediction model.
+Using **SQL, Power BI, and Python,** I built a complete credit risk analysis workflow that includes business-focused insights, an interactive dashboard, and an explainable **default prediction model.**
 
 ### Key Results
 - Analyzed **2.26M+ loans** using **SQL** and **Python**
@@ -44,7 +44,7 @@ Loaded the analytics dataset into **MySQL**
 Used SQL to analyze default patterns by:
 - Interest rate
 - Income and employment length
-- Credit history and utilization  
+- Credit history and utilization   
 Compared **default rate vs default exposure** to identify financial risk
 
 ### Visualization
