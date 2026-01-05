@@ -1,7 +1,5 @@
 # Credit Risk Analysis & Default Prediction
 
-<img src="Screenshots/dashboard_overview.gif">
-
 ## 1. Project Summary  
 This project analyzes **2.26M+ historical loan records** to understand **why borrowers default, which segments are riskiest,** and **where financial losses are concentrated.**
 
@@ -13,6 +11,8 @@ Using **SQL, Power BI, and Python,** I built a complete credit risk analysis wor
 - Showed why **default exposure matters more than default rate**
 - Built an interpretable model with **~67% recall for defaulters**
 - Created a **Power BI dashboard** for portfolio-level risk analysis
+
+![Credit Risk Dashboard](Screenshots/dashboard_overview.gif)
 
 ## 2. Business Problem
 **Lenders need to answer questions like:**
